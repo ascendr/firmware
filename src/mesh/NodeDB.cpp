@@ -22,6 +22,7 @@
 #include "mesh-pb-constants.h"
 #include "meshUtils.h"
 #include "modules/NeighborInfoModule.h"
+#include "modules/AmbassadorModule.h"
 #include <ErriezCRC32.h>
 #include <algorithm>
 #include <pb_decode.h>
@@ -1751,7 +1752,9 @@ bool NodeDB::updateUser(uint32_t nodeId, meshtastic_User &p, uint8_t channelInde
     if (changed) {
         updateGUIforNode = info;
         notifyObservers(true); // Force an update whether or not our node counts have changed
-
+        // Notify AmbassadorModule of new node
+        LOG_INFO("NodeDB changed, notifying AmbassadorModule");
+        ambassadorModule->sendAmbassadorMessageToNewNodes(nodeId);
         // We just changed something about a User,
         // store our DB unless we just did so less than a minute ago
 

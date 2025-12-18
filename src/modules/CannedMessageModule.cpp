@@ -2226,7 +2226,8 @@ bool CannedMessageModule::saveProtoForModule()
  */
 void CannedMessageModule::installDefaultCannedMessageModuleConfig()
 {
-    strncpy(cannedMessageModuleConfig.messages, "Hi|Bye|Yes|No|Ok", sizeof(cannedMessageModuleConfig.messages));
+    const char *defaultMessages = "I'd like to invite you to join the Arizona Meshtastic Community (azmsh.net) over on MediumFast Slot 18";
+    strncpy(cannedMessageModuleConfig.messages, defaultMessages, sizeof(cannedMessageModuleConfig.messages));
 }
 
 /**

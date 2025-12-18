@@ -38,6 +38,7 @@
 #endif
 #if !MESHTASTIC_EXCLUDE_NODEINFO
 #include "modules/NodeInfoModule.h"
+#include "modules/AmbassadorModule.h"
 #endif
 #if !MESHTASTIC_EXCLUDE_GPS
 #include "modules/PositionModule.h"
@@ -124,6 +125,7 @@ void setupModules()
 #endif
 #if !MESHTASTIC_EXCLUDE_NODEINFO
     nodeInfoModule = new NodeInfoModule();
+    ambassadorModule = new AmbassadorModule();
 #endif
 #if !MESHTASTIC_EXCLUDE_GPS
     positionModule = new PositionModule();
