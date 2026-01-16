@@ -11,7 +11,7 @@ AmbassadorModule *ambassadorModule;
 void AmbassadorModule::sendAmbassadorMessageToNewNodes(NodeNum dest)
 {
     LOG_WARN("New node 0x%0x sending invite", dest);
-    // Create message prefix wit node name 
+    // Create message prefix with node name 
     const meshtastic_NodeInfoLite *node = nodeDB->getMeshNode(dest);
     const char *formatStr = "Hello %s, ";
     char* msgPrefix = new char[strlen(formatStr) + strlen(node->user.short_name)];
@@ -78,6 +78,9 @@ void AmbassadorModule::sendPayload(NodeNum dest, bool wantReplies, const char* m
     meshtastic_MeshPacket *p = allocDataPacket();
     p->to = dest;
     p->decoded.portnum = meshtastic_PortNum_TEXT_MESSAGE_APP;
+    p->want_ack = true;
+    p->hop_limit = 5;
+    p->channel = 0; // Primary channel
     p->decoded.want_response = wantReplies;
     p->decoded.payload.size = strlen(msgStr);
     memcpy(p->decoded.payload.bytes, msgStr, p->decoded.payload.size);
