@@ -14,6 +14,7 @@ class ScanI2C
         SCREEN_ST7567,
         RTC_RV3028,
         RTC_PCF8563,
+        RTC_PCF85063,
         RTC_RX8130CE,
         CARDKB,
         TDECKKB,
@@ -30,15 +31,13 @@ class ScanI2C
         INA3221,
         MAX17048,
         MCP9808,
-        SHT31,
-        SHT4X,
-        SHTC3,
         LPS22HB,
-        QMC6310,
+        QMC6310U,
+        QMC6310N,
         QMI8658,
         QMC5883L,
         HMC5883L,
-        PMSA0031,
+        PMSA003I,
         QMA6100P,
         MPU6050,
         LIS3DH,
@@ -85,7 +84,15 @@ class ScanI2C
         DRV2605,
         BH1750,
         DA217,
-        CHSC6X
+        CHSC6X,
+        CST226SE,
+        BMI270,
+        SEN5X,
+        SFA30,
+        CW2015,
+        SCD30,
+        ADS1115,
+        SHTXX
     } DeviceType;
 
     // typedef uint8_t DeviceAddress;
