@@ -1,6 +1,7 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "trunk.io",
+  "platformio-ide.autoPreloadEnvTasks": true,
   "trunk.enableWindows": true,
   "files.insertFinalNewline": false,
   "files.trimFinalNewlines": false,

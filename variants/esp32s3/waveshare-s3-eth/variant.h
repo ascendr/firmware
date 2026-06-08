@@ -16,11 +16,11 @@
 // External SX1262 mapping (adjust if your module is wired differently).
 #define USE_SX1262
 
-#define LORA_SCK 7
-#define LORA_MISO 5
-#define LORA_MOSI 6
-#define LORA_CS 4
-#define LORA_RESET 15
+#define LORA_SCK 41
+#define LORA_MISO 40
+#define LORA_MOSI 39
+#define LORA_CS 42
+#define LORA_RESET 45
 
 #define SX126X_CS LORA_CS
 #define SX126X_DIO1 16
