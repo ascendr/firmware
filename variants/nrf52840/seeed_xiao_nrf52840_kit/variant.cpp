@@ -93,4 +93,8 @@ void initVariant()
 
     pinMode(PIN_LED3, OUTPUT);
     ledOff(PIN_LED3);
+
+    pinMode(PIN_E22P_EN, OUTPUT);      // Configures D5 as an output pin
+    digitalWrite(PIN_E22P_EN, HIGH);   // Drives D5 HIGH to enable the E22P module
+
 }

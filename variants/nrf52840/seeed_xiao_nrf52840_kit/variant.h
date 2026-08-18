@@ -146,7 +146,13 @@ static const uint8_t A5 = PIN_A5;
 #define SX126X_DIO1 D1
 #define SX126X_BUSY D3
 #define SX126X_RESET D2
-#define SX126X_RXEN D5
+//#define SX126X_RXEN D5 //For the E22P Pin 6 is Chip EN not RX-EN  
+#define PIN_E22P_EN D5 
+// Set the absolute hardware safety limit for the SX1262 chip output
+#define SX126X_MAX_POWER 22 
+// Tell the firmware the hardware adds external gain (30dBm output - 22dBm input = 8dBm PA gain)
+#define TX_GAIN_LORA 8
+
 #endif // defined(SEEED_XIAO_NRF_WIO_BTB)
 #endif // defined(XIAO_BLE_LEGACY_PINOUT)
 
